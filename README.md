@@ -111,10 +111,11 @@ password=pass2
 ## Контакты
 Для вопросов или предложений создайте issue в репозитории или свяжитесь с автором.
 
-### English
 # MangaBuff Chapter Scroller
 
 ## Summary
+
+### English
 
 **MangaBuff Chapter Scroller** is a Python script for automating the viewing of manga chapters on the website mangabuff.ru. The script performs authentication using credentials from a `config.txt` file, navigates to specified manga links, opens designated chapters, and smoothly scrolls them to the bottom. It utilizes `undetected_chromedriver` and `selenium` to control the Chrome browser, supports multi-threading, and offers flexible configuration through a config file.
 
