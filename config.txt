@@ -1,0 +1,15 @@
+[account1]
+email=user@example.com
+password=pass
+
+[account2]
+email=user@example.com
+password=pass
+
+[account3]
+email=user@example.com
+password=pass
+
+[account4]
+email=user@example.com
+password=pass
