@@ -17,7 +17,7 @@
 - Гибкий выбор начальной главы и количества глав для обработки.
 
 ## Требования
-- **Операционная система**: Windows, macOS, Linux.
+- **Операционная система**: Windows(Остальные не тестировались).
 - **Python**: 3.8 или выше.
 - **Браузер**: Google Chrome (последняя версия).
 - **Зависимости Python**:
@@ -31,8 +31,8 @@
    - Убедитесь, что `pip` добавлен в PATH.
 2. Клонируйте репозиторий:
    ```bash
-   git clone <repository-url>
-   cd <repository-folder>
+   git clone https://github.com/soMajoz/Mangabuff-chapter-scroller.git
+   cd Mangabuff-chapter-scroller
    ```
 3. Установите зависимости:
    ```bash
@@ -112,26 +112,25 @@ password=pass2
 Для вопросов или предложений создайте issue в репозитории или свяжитесь с автором.
 
 ### English
-**MangaBuff Chapter Scroller** is a Python script that automates viewing manga chapters on mangabuff.ru. It authenticates using credentials from a `config.txt` file, navigates to specified manga links, opens designated chapters, and smoothly scrolls them to the bottom. Built with `undetected_chromedriver` and `selenium` for Chrome browser control, it supports multi-threading and flexible configuration via a config file.
+# MangaBuff Chapter Scroller
 
-**Warning**: Using this script may violate mangabuff.ru's terms of service. Ensure compliance with the site's policies and applicable laws.
+## Summary
+
+**MangaBuff Chapter Scroller** is a Python script for automating the viewing of manga chapters on the website mangabuff.ru. The script performs authentication using credentials from a `config.txt` file, navigates to specified manga links, opens designated chapters, and smoothly scrolls them to the bottom. It utilizes `undetected_chromedriver` and `selenium` to control the Chrome browser, supports multi-threading, and offers flexible configuration through a config file.
+
+**Warning**: Using this script may violate mangabuff.ru's terms of service. Ensure your actions comply with the site's policies and applicable laws.
 
 # Documentation: MangaBuff Chapter Scroller
-
-## Introduction
-MangaBuff Chapter Scroller is a Python script designed to automate the process of viewing manga chapters on [mangabuff.ru](https://mangabuff.ru). The script handles authentication, navigates to specified manga pages, opens designated chapters, and scrolls them to the bottom. It leverages `undetected_chromedriver`, `selenium`, and `webdriver-manager` to control a Chrome browser.
-
-**Warning**: Using this script may violate mangabuff.ru's terms of service. Ensure your actions comply with the site's policies and applicable laws before proceeding.
 
 ## Features
 - Authentication on the website using credentials from a configuration file.
 - Automatic scrolling of manga chapter pages.
 - Multi-threading support for processing multiple links simultaneously.
 - Configuration via `config.txt` to manage multiple accounts.
-- Flexible selection of starting chapter and number of chapters to process.
+- Flexible selection of the starting chapter and the number of chapters to process.
 
 ## Requirements
-- **Operating System**: Windows, macOS, Linux.
+- **Operating System**: Windows (other systems not tested).
 - **Python**: 3.8 or higher.
 - **Browser**: Google Chrome (latest version).
 - **Python Dependencies**:
@@ -141,18 +140,18 @@ MangaBuff Chapter Scroller is a Python script designed to automate the process o
 
 ## Installation
 1. Install Python:
-   - Download and install Python 3.8+ from [python.org](https://www.python.org/downloads/).
+   - Download and install Python 3.8+ from [the official website](https://www.python.org/downloads/).
    - Ensure `pip` is added to your PATH.
 2. Clone the repository:
    ```bash
-   git clone <repository-url>
-   cd <repository-folder>
+   git clone https://github.com/soMajoz/Mangabuff-chapter-scroller.git
+   cd Mangabuff-chapter-scroller
    ```
 3. Install dependencies:
    ```bash
    pip install undetected-chromedriver selenium webdriver-manager
    ```
-4. Ensure Google Chrome is installed and up-to-date.
+4. Ensure Google Chrome is installed and updated.
 5. Create a `config.txt` file in the project's root directory (see "Configuration" section).
 
 ## Configuration
@@ -166,8 +165,8 @@ password=pass1
 email=user2@example.com
 password=pass2
 ```
-- `[Account1]`, `[Account2]`: Unique section names for each account.
-- `email` and `password`: — Credentials for logging into mangabuff.ru.
+- `[Account1]`, `[Account2]` — unique section names for each account.
+- `email` and `password` — credentials for logging into mangabuff.ru.
 - The file must be saved in UTF-8 encoding.
 
 ## Usage
@@ -189,48 +188,38 @@ password=pass2
    ```
    https://mangabuff.ru/manga/example-manga 1 100 10
    ```
-   - `<link>`: URL of the manga section.
-   - `<account_number>`: Account number from `config.txt` (1 for `Account1`, ,2 for `Account2`, etc.).
+   - `<link>`: URL of the manga page.
+   - `<account_number>`: Account number from `config.txt` (1 for `Account1`, 2 for `Account2`, etc.).
    - `<chapter_number>`: Starting chapter number.
    - `<number_of_chapters>`: Number of chapters to process.
-4. To finish inputting, press Enter without entering data. leave the line blank.
-5. The script will process each link launch processing in a separate thread, opening a Chrome browser for each one.
-## Example Output
-```
-Loaded accounts:
-1. Account1
-2. Account2
-Enter link, account number, chapter number, chapter count (e.g., 'mangabuff.ru 1 100 100,10', empty string to finish):
-https://mangabuff.ru/manga/example-manga 1 10 2010
-Done: https://mangabuff.ru/manga/example-manga
-Chapters processed: 10:10
-```
+4. To finish inputting, leave the line blank and press Enter.
+5. The script will launch processing in a separate thread, opening a Chrome browser for each link.
 
 ## Technical Details
-- **Browser**: Utilizes `undetected-chromedriver` to avoid detection of automation.
+- **Browser**: Uses `undetected_chromedriver` to bypass automation detection.
 - **Authentication**: Performed via a JavaScript request with a CSRF token extracted from the page.
-- **Scrolling**: Smooth scrolling with a 16-pixel step and 0.01-second delay.
+- **Scrolling**: Smooth scrolling with a 16-pixel step and a 0.01-second delay.
 - **Multi-threading**: Each link is processed in a separate thread using `threading.Thread`.
-- **Error Handling**: Captures The script captures exceptions during page or chapter loading, displaying error messages.
+- **Error Handling**: The script captures exceptions during page or chapter loading, displaying error messages.
 
 ## Limitations
 - The script does not support CAPTCHA or two-factor authentication.
 - Frequent requests may lead to account or IP bans.
-- Performance depends on internet speed and hardware.
-- The script is tailored for mangabuff.ru and not adaptable for other websites.
+- Performance depends on internet speed and computer capabilities.
+- The script is designed specifically for mangabuff.ru and is not adapted for other websites.
 
 ## Recommendations
 - Use the script sparingly to avoid detection or bans.
-- Store `config.txt` securely as it contains sensitive data.
+- Store `config.txt` securely, as it contains sensitive credentials.
 - Regularly update Google Chrome and Python dependencies.
 
 ## License
-Distributed under the MIT License. See the MIT License text for details.
+The project is distributed under the MIT License. See the `LICENSE` file for details.
 
 ## Troubleshooting
-- **Issue**: "No such file: config.txt"**: Ensure `config.txt` exists and is in the same directory as the script.
-- **Issue**: Browser fails to launch**: Verify Check that Google Chrome installation is installed and update updated; reinstall `undetected-chromedriver` if needed.
-- **Issue**: Website fails to load**: Check Internet connection or try again later, as the site may block requests.
+- **Error "No such file: config.txt"**: Ensure `config.txt` exists and is in the same directory as the script.
+- **Browser fails to launch**: Verify Google Chrome is installed and updated; reinstall `undetected-chromedriver` if needed.
+- **Website fails to load**: Check your internet connection or try again later, as the site may block requests.
 
 ## Contact
-For questions or feedback, create an issue in the repository or contact the author.
+For questions or suggestions, create an issue in the repository or contact the author.
